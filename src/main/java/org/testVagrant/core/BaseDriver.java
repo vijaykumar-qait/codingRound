@@ -1,7 +1,9 @@
 package org.testVagrant.core;
 
 import org.openqa.selenium.WebDriver;
-
+/*
+ * This is base driver class being extended by test, generic and other utitity class
+ */
 public class BaseDriver {
 	public WebDriver driver;
 	

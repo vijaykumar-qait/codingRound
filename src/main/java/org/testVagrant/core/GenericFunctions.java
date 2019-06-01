@@ -3,6 +3,7 @@ package org.testVagrant.core;
 import java.io.File;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchFrameException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,6 +11,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testVagrant.utils.Log;
+
+/*
+ * This is generic class where the initiaisation of the driver depending upon the system we are using along with
+ * containing all the common method that we will be using in our page object classes.
+ */
 
 public class GenericFunctions extends BaseDriver{
 	
@@ -112,6 +118,18 @@ public class GenericFunctions extends BaseDriver{
 		Log.info("Element is clicked" );
 	}
 	
+	public void MouseHoverAndClick(By locator) {
+		Actions actions = new Actions(driver);
+		actions.moveToElement(driver.findElement(locator));
+		actions.click().build().perform();
+	}
+	
+	public void MouseHoverAndClick(WebElement locator) {
+		Actions actions = new Actions(driver);
+		actions.moveToElement(locator);
+		actions.click().build().perform();
+	}
+	
 	public void Fill_Text(By locator, String value) {
 		WebElement element = driver.findElement(locator);
 		this.Click(locator);
@@ -152,5 +170,28 @@ public class GenericFunctions extends BaseDriver{
 		Select select = new Select(locator);
 		select.selectByVisibleText(byText);
 		Log.info("Selected drop down by text: " + byText);
+	}
+	
+	public void SwitchToFrame(By locator) {
+		WebElement frame = driver.findElement(locator);
+		try {
+			driver.switchTo().frame(frame);
+			Log.info("Switched to frame");
+		}
+		catch(NoSuchFrameException e) {
+			e.printStackTrace();
+			Log.error("Frame not found");
+		}
+	}
+	
+	public void SwitchToFrame(WebElement locator) {
+		try {
+			driver.switchTo().frame(locator);
+			Log.info("Switched to frame");
+		}
+		catch(NoSuchFrameException e) {
+			e.printStackTrace();
+			Log.error("Frame not found");
+		}
 	}
 }

@@ -8,6 +8,11 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+ * This class will read the data from requirement.config where we have put our global variable.Class method is defined as static as we will 
+ * be needing these global variable throughout our execution
+ */
+
 public class ConfigFileReader {
 	public static String getConfigValue(String value)  {
 		Map<String, String> config = new HashMap<String, String>();

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="25679" started-at="2019-06-01T15:46:14Z" finished-at="2019-06-01T15:46:40Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="25679" started-at="2019-06-01T15:46:14Z" finished-at="2019-06-01T15:46:40Z">
+      <class name="org.testVagrant.tests.SignInTest">
+        <test-method status="PASS" signature="BeforeTest()[pri:0, instance:org.testVagrant.tests.SignInTest@4678c730]" name="BeforeTest" is-config="true" duration-ms="16366" started-at="2019-06-01T21:16:14Z" finished-at="2019-06-01T21:16:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeTest -->
+        <test-method status="PASS" signature="TC_001_Verify_SignIn_Modal_Window()[pri:0, instance:org.testVagrant.tests.SignInTest@4678c730]" name="TC_001_Verify_SignIn_Modal_Window" duration-ms="7295" started-at="2019-06-01T21:16:30Z" finished-at="2019-06-01T21:16:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_001_Verify_SignIn_Modal_Window -->
+        <test-method status="PASS" signature="TC_002_Verify__Error_Message_is_Thrown_If_SignIn_Details_Are_Missing()[pri:0, instance:org.testVagrant.tests.SignInTest@4678c730]" name="TC_002_Verify__Error_Message_is_Thrown_If_SignIn_Details_Are_Missing" duration-ms="574" started-at="2019-06-01T21:16:38Z" depends-on-methods="org.testVagrant.tests.SignInTest.TC_001_Verify_SignIn_Modal_Window" finished-at="2019-06-01T21:16:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_002_Verify__Error_Message_is_Thrown_If_SignIn_Details_Are_Missing -->
+        <test-method status="PASS" signature="TearDown()[pri:0, instance:org.testVagrant.tests.SignInTest@4678c730]" name="TearDown" is-config="true" duration-ms="1395" started-at="2019-06-01T21:16:38Z" finished-at="2019-06-01T21:16:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TearDown -->
+      </class> <!-- org.testVagrant.tests.SignInTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
