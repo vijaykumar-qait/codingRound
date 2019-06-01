@@ -1,6 +1,7 @@
 package org.testVagrant.core;
 
 import java.io.File;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchFrameException;
@@ -193,5 +194,9 @@ public class GenericFunctions extends BaseDriver{
 			e.printStackTrace();
 			Log.error("Frame not found");
 		}
+	}
+	
+	public List<WebElement> getElementList(By locator) {
+		return driver.findElements(locator);
 	}
 }
