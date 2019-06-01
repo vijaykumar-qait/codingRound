@@ -2,3 +2,7 @@ build
 .idea
 .gradle
 /target/
+/test-output/
+.classpath
+.project
+/.settings/
