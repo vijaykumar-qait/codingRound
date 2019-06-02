@@ -1,30 +1,30 @@
-02-06-2019 18:05:58 INFO [Log]: Get: https://www.cleartrip.com/
-02-06-2019 18:05:58 INFO [Log]: **** Started TC_001_Verify_Clear_Trip_Home_Page ****
-02-06-2019 18:05:58 INFO [Log]: **** Started TC_001_Verify_SignIn_Modal_Window ****
-02-06-2019 18:05:58 INFO [Log]: Element is clicked
-02-06-2019 18:06:04 INFO [Log]: Switched to frame
-02-06-2019 18:06:04 INFO [Log]: **** Ended TC_001_Verify_SignIn_Modal_Window ****
-02-06-2019 18:06:04 INFO [Log]: **** Started TC_001_Verify_That_User_Is_On_Hotel_Page ****
-02-06-2019 18:06:05 INFO [Log]: Element is clicked
-02-06-2019 18:06:05 INFO [Log]: **** Ended TC_001_Verify_Clear_Trip_Home_Page ****
-02-06-2019 18:06:05 INFO [Log]: **** Started TC_002_Verify__Error_Message_is_Thrown_If_SignIn_Details_Are_Missing ****
-02-06-2019 18:06:05 INFO [Log]: Element is clicked
-02-06-2019 18:06:06 INFO [Log]: **** Ended TC_002_Verify__Error_Message_is_Thrown_If_SignIn_Details_Are_Missing ****
-02-06-2019 18:06:06 INFO [Log]: **** Started TC_002_Verify_That_Results_Appear_For_A_OneWay_Journey ****
-02-06-2019 18:06:06 INFO [Log]: Element is clicked
-02-06-2019 18:06:06 INFO [Log]: Filled text Bangalore
-02-06-2019 18:06:10 INFO [Log]: Filled text Delhi
-02-06-2019 18:06:15 INFO [Log]: Element is clicked
-02-06-2019 18:06:18 INFO [Log]: Element is clicked
-02-06-2019 18:06:18 INFO [Log]: **** Ended TC_001_Verify_That_User_Is_On_Hotel_Page ****
-02-06-2019 18:06:18 INFO [Log]: **** Started TC_002_Verify_User_Should_Be_Able_To_Search_For_Hotels ****
-02-06-2019 18:06:19 INFO [Log]: Filled text Indiranagar, Bangalore
-02-06-2019 18:06:19 INFO [Log]: Element is clicked
-02-06-2019 18:06:19 INFO [Log]: **** Ended TC_002_Verify_That_Results_Appear_For_A_OneWay_Journey ****
-02-06-2019 18:06:25 INFO [Log]: Element is clicked
-02-06-2019 18:06:26 INFO [Log]: Selected drop down by text: 1 room, 2 adults
-02-06-2019 18:06:27 INFO [Log]: Element is clicked
-02-06-2019 18:06:27 INFO [Log]: **** Ended TC_002_Verify_User_Should_Be_Able_To_Search_For_Hotels ****
-02-06-2019 18:06:29 INFO [Log]: Browser closed
-02-06-2019 18:06:31 INFO [Log]: Browser closed
-02-06-2019 18:06:32 INFO [Log]: Browser closed
+02-06-2019 18:37:46 INFO [Log]: Get: https://www.cleartrip.com/
+02-06-2019 18:37:46 INFO [Log]: **** Started TC_001_Verify_SignIn_Modal_Window ****
+02-06-2019 18:37:46 INFO [Log]: **** Started TC_001_Verify_Clear_Trip_Home_Page ****
+02-06-2019 18:37:46 INFO [Log]: Element is clicked
+02-06-2019 18:37:50 INFO [Log]: Switched to frame
+02-06-2019 18:37:50 INFO [Log]: **** Ended TC_001_Verify_SignIn_Modal_Window ****
+02-06-2019 18:37:50 INFO [Log]: **** Started TC_001_Verify_That_User_Is_On_Hotel_Page ****
+02-06-2019 18:37:55 INFO [Log]: Element is clicked
+02-06-2019 18:37:55 INFO [Log]: **** Ended TC_001_Verify_Clear_Trip_Home_Page ****
+02-06-2019 18:37:55 INFO [Log]: **** Started TC_002_Verify__Error_Message_is_Thrown_If_SignIn_Details_Are_Missing ****
+02-06-2019 18:37:55 INFO [Log]: Element is clicked
+02-06-2019 18:37:56 INFO [Log]: **** Ended TC_002_Verify__Error_Message_is_Thrown_If_SignIn_Details_Are_Missing ****
+02-06-2019 18:37:56 INFO [Log]: **** Started TC_002_Verify_That_Results_Appear_For_A_OneWay_Journey ****
+02-06-2019 18:37:56 INFO [Log]: Element is clicked
+02-06-2019 18:37:56 INFO [Log]: Filled text Bangalore
+02-06-2019 18:37:58 INFO [Log]: Filled text Delhi
+02-06-2019 18:37:59 INFO [Log]: Element is clicked
+02-06-2019 18:38:00 INFO [Log]: **** Ended TC_001_Verify_That_User_Is_On_Hotel_Page ****
+02-06-2019 18:38:00 INFO [Log]: **** Started TC_002_Verify_User_Should_Be_Able_To_Search_For_Hotels ****
+02-06-2019 18:38:01 INFO [Log]: Filled text Indiranagar, Bangalore
+02-06-2019 18:38:01 INFO [Log]: Element is clicked
+02-06-2019 18:38:06 INFO [Log]: Element is clicked
+02-06-2019 18:38:06 INFO [Log]: **** Ended TC_002_Verify_That_Results_Appear_For_A_OneWay_Journey ****
+02-06-2019 18:38:09 INFO [Log]: Element is clicked
+02-06-2019 18:38:10 INFO [Log]: Selected drop down by text: 1 room, 2 adults
+02-06-2019 18:38:11 INFO [Log]: Element is clicked
+02-06-2019 18:38:11 INFO [Log]: **** Ended TC_002_Verify_User_Should_Be_Able_To_Search_For_Hotels ****
+02-06-2019 18:38:13 INFO [Log]: Browser closed
+02-06-2019 18:38:15 INFO [Log]: Browser closed
+02-06-2019 18:38:17 INFO [Log]: Browser closed

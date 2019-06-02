@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testVagrant.utils.Log;
 
 /*
- * This is generic class where the initiaisation of the driver depending upon the system we are using along with
+ * This is generic class where the initialization of the driver depending upon the system we are using along with
  * containing all the common method that we will be using in our page object classes.
  */
 
@@ -34,6 +34,9 @@ public class GenericFunctions extends BaseDriver{
 		return (OS.contains("nix") || OS.contains("nux") || OS.contains("aix"));
 	}
 	
+	/*
+	 * StartDriver take browertype as parameter depending on which script will execute on specified browser 
+	 */
 	public WebDriver StartDriver(String browserType) {
 		this.browerType = browserType;
 		String systemType = System.getProperty("os.name").toLowerCase();
@@ -90,17 +93,26 @@ public class GenericFunctions extends BaseDriver{
 		return this.driver;
 	}
 	
+	/*
+	 * Maximize browser window and navigate to URL we are getting from requirement.config file
+	 */
 	public void get(String url) {
-		driver.get(url);
 		driver.manage().window().maximize();
+		driver.get(url);
 		Log.info("Get: " + url) ;
 	}
 	
+	/*
+	 * Closing down of browser
+	 */
 	public void closeBrowser() {
 		driver.quit();
 		Log.info("Browser closed");
 	}
 	
+	/*
+	 * isVisible method is overloaded with By or WebElement locator to return boolean result if that element is visible on DOM
+	 */
 	public boolean isVisible(By locator) {
 		return driver.findElement(locator).isDisplayed();
 	}
@@ -109,6 +121,9 @@ public class GenericFunctions extends BaseDriver{
 		return locator.isDisplayed();
 	}
 	
+	/*
+	 * Click method is overloaded with By or WebElement locator to perform click operation on element
+	 */
 	public void Click(By locator) {
 		driver.findElement(locator).click();
 		Log.info("Element is clicked");
@@ -119,6 +134,10 @@ public class GenericFunctions extends BaseDriver{
 		Log.info("Element is clicked" );
 	}
 	
+	/*
+	 * MouserHoverAndClick method is overloaded with By or WebElement locator to perform mouse hover to that element and
+	 * then performing click operation
+	 */
 	public void MouseHoverAndClick(By locator) {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(driver.findElement(locator));
@@ -131,6 +150,9 @@ public class GenericFunctions extends BaseDriver{
 		actions.click().build().perform();
 	}
 	
+	/*
+	 * Fill_Text method is overloaded with By or WebElement locator to fill text
+	 */
 	public void Fill_Text(By locator, String value) {
 		WebElement element = driver.findElement(locator);
 		this.Click(locator);
@@ -143,6 +165,10 @@ public class GenericFunctions extends BaseDriver{
 		locator.sendKeys(value);
 		Log.info("Filled text " + value);
 	}
+	
+	/*
+	 * Mouse_Hover method is overloaded with By or WebElement locator to perform mouse hover action to specified locator
+	 */
 	
 	public void Mouse_Hover(By locator) {
 		Actions actions = new Actions(driver);
@@ -159,6 +185,9 @@ public class GenericFunctions extends BaseDriver{
 		Log.info("Mouse hover to element");
 	}
 	
+	/*
+	 * GetText method is overloaded with By or WebElement locator to fetch text of specified web element
+	 */
 	public String GetText(By locator) {
 		return driver.findElement(locator).getText().trim();
 	}
@@ -167,12 +196,18 @@ public class GenericFunctions extends BaseDriver{
 		return locator.getText();
 	}
 	
+	/*
+	 * SelectDropDownByText to select drop-down with visible text passed as paramter
+	 */
 	public void SelectDropDownByText(WebElement locator, String byText) {
 		Select select = new Select(locator);
 		select.selectByVisibleText(byText);
 		Log.info("Selected drop down by text: " + byText);
 	}
 	
+	/*
+	 * SwitchToFrame to switch to frame with given By or WebElement as parameter
+	 */
 	public void SwitchToFrame(By locator) {
 		WebElement frame = driver.findElement(locator);
 		try {
@@ -196,6 +231,9 @@ public class GenericFunctions extends BaseDriver{
 		}
 	}
 	
+	/*
+	 * getElementList return list of all the webElement
+	 */
 	public List<WebElement> getElementList(By locator) {
 		return driver.findElements(locator);
 	}

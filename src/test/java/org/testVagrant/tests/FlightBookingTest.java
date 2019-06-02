@@ -12,6 +12,9 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+/*
+ * FlightBookingTest class contains all the test scenarios for Flight Booking functionality
+ */
 public class FlightBookingTest extends BaseDriver{
 	
 	String URL;
@@ -25,6 +28,9 @@ public class FlightBookingTest extends BaseDriver{
 	FlightSearchResultPage flightSearchResultPage;
 	LandingPage landingPage;
 	
+	/*
+	 * Pre-requirement before execution of test
+	 */
 	@BeforeTest
 	public void BeforeTest() {
 		URL = ConfigFileReader.getConfigValue("url");
@@ -43,7 +49,7 @@ public class FlightBookingTest extends BaseDriver{
 		generic.get(URL);
 	}
 
-	@Test
+	@Test(description="To verify that user is able to navigate to Flight booking page")
 	public void TC_001_Verify_Clear_Trip_Home_Page() {
     	String currenTestName = Thread.currentThread().getStackTrace()[1].getMethodName();
 		Log.startTestCase(currenTestName);
@@ -52,7 +58,7 @@ public class FlightBookingTest extends BaseDriver{
 		Log.endTestCase(currenTestName);
 	}
 	
-	@Test(dependsOnMethods="TC_001_Verify_Clear_Trip_Home_Page")
+	@Test(dependsOnMethods="TC_001_Verify_Clear_Trip_Home_Page", description="To verify that user is able to search for the flight")
 	public void TC_002_Verify_That_Results_Appear_For_A_OneWay_Journey() {
     	String currenTestName = Thread.currentThread().getStackTrace()[1].getMethodName();
 		Log.startTestCase(currenTestName);
@@ -68,6 +74,9 @@ public class FlightBookingTest extends BaseDriver{
 		Log.endTestCase(currenTestName);
 	}
 	
+	/*
+	 * Closing down of browser after test execution
+	 */
 	@AfterTest
 	public void TearDown() {
 		generic.closeBrowser();

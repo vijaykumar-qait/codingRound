@@ -6,6 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testVagrant.core.GenericFunctions;
 
+/*
+ * FlightSearchResultPage contains all method actions to be perform on search result page of flight
+ */
 public class FlightSearchResultPage {
 	
 	WebDriver driver;

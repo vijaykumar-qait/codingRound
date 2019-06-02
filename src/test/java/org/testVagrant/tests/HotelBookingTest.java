@@ -12,6 +12,9 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+/*
+ * HotelBookingTest class contains all the test scenarios for Hotel Booking functionality
+ */
 public class HotelBookingTest extends BaseDriver{
 	
 	String URL;
@@ -26,6 +29,9 @@ public class HotelBookingTest extends BaseDriver{
 	HotelSearchResultPage hotelSearchResultPage;
 	LandingPage landingPage;
 	
+	/*
+	 * Pre-requirement before execution of Test
+	 */
 	@BeforeTest
 	public void BeforeTest() {
 		URL = ConfigFileReader.getConfigValue("url");
@@ -37,7 +43,6 @@ public class HotelBookingTest extends BaseDriver{
 		
 		generic = new GenericFunctions();
 		driver = generic.StartDriver(browserType);
-		driver.manage().window().maximize();
 		
 		landingPage = new LandingPage(driver, generic);
 		hotelBookingPage = new HotelBookingPage(driver, generic);
@@ -46,7 +51,7 @@ public class HotelBookingTest extends BaseDriver{
 		generic.get(URL);
 	}
 
-	@Test
+	@Test(description="To verify that user is able to navigate to Hotel Booking page")
 	public void TC_001_Verify_That_User_Is_On_Hotel_Page() {
     	String currenTestName = Thread.currentThread().getStackTrace()[1].getMethodName();
 		Log.startTestCase(currenTestName);
@@ -56,7 +61,8 @@ public class HotelBookingTest extends BaseDriver{
 	}
 	
 	
-	@Test(dependsOnMethods="TC_001_Verify_That_User_Is_On_Hotel_Page")
+	@Test(dependsOnMethods="TC_001_Verify_That_User_Is_On_Hotel_Page", description="To verify that user is able to fill the details and "
+			+ "is able to make a search for hotel")
 	public void TC_002_Verify_User_Should_Be_Able_To_Search_For_Hotels() {
     	String currenTestName = Thread.currentThread().getStackTrace()[1].getMethodName();
 		Log.startTestCase(currenTestName);
@@ -71,6 +77,9 @@ public class HotelBookingTest extends BaseDriver{
 		Log.endTestCase(currenTestName);
 	}
 	
+	/*
+	 * Closing of browser after execution of all the test
+	 */
 	@AfterTest
 	public void TearDown() {
 		generic.closeBrowser();

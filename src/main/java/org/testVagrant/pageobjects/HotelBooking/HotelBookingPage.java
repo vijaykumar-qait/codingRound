@@ -12,6 +12,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testVagrant.core.GenericFunctions;
 
+/*
+ * HotelBookingPage Class contains all the method action user will perform on Hotel Booking page
+ */
 public class HotelBookingPage {
 
 	WebDriver driver;

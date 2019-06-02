@@ -17,6 +17,9 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testVagrant.core.GenericFunctions;
 
+/*
+ * FlightPage Class contains all the method action user will perform on Flight page
+ */
 public class FlightPage {
 	
 	WebDriver driver;
@@ -113,16 +116,4 @@ public class FlightPage {
 	public void click_searchBtn() {
 		generic.Click(searchBtn);
 	}
-	
-/*	String getCurrentDay() {
-		//Create calendar object
-		Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
-		
-		//Get current day as number
-		int todayInt = calendar.get(Calendar.DAY_OF_MONTH);
-		System.out.println("Today int: " + todayInt);
-		String todayStr = Integer.toString(todayInt);
-		return todayStr;
-	}*/
-
 }

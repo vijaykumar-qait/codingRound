@@ -12,6 +12,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+/*
+ * SignInTest class contains all the test scenarios for SignTest functionality
+ */
 public class SignInTest extends BaseDriver{
 	
 	String URL;
@@ -22,6 +25,9 @@ public class SignInTest extends BaseDriver{
 	LandingPage landingPage;
 	SignInFormPage signInFormPage;
 	
+	/*
+	 * Requirements before the execution of Test 
+	 */
 	@BeforeTest
 	public void BeforeTest() {
 		URL = ConfigFileReader.getConfigValue("url");
@@ -36,7 +42,7 @@ public class SignInTest extends BaseDriver{
 		generic.get(URL);
 	}
 	
-	@Test
+	@Test(description="To Verify that SignIn Modal Window is displayed on clicking SignIn button")
 	public void TC_001_Verify_SignIn_Modal_Window() {
 		String currenTestName = Thread.currentThread().getStackTrace()[1].getMethodName();
 		Log.startTestCase(currenTestName);
@@ -47,7 +53,8 @@ public class SignInTest extends BaseDriver{
     	Log.endTestCase(currenTestName);
 	}
 	
-    @Test(dependsOnMethods="TC_001_Verify_SignIn_Modal_Window")
+    @Test(dependsOnMethods="TC_001_Verify_SignIn_Modal_Window", description="To Verify that error message is displayed when no "
+    		+ "login credentials are provided and sign in button is clicked")
     public void TC_002_Verify__Error_Message_is_Thrown_If_SignIn_Details_Are_Missing() {
     	String currenTestName = Thread.currentThread().getStackTrace()[1].getMethodName();
     	Log.startTestCase(currenTestName);
@@ -57,6 +64,9 @@ public class SignInTest extends BaseDriver{
     	Log.endTestCase(currenTestName);
     }
 
+    /*
+     * Closing down of browser window after exection of all test
+     */
     @AfterTest
     public void TearDown() {
     	generic.closeBrowser();

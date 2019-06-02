@@ -6,6 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testVagrant.core.GenericFunctions;
 
+/*
+ * SignInFormPage class contains all the action methods regarding SignIn page
+ */
 public class SignInFormPage {
 	
 	WebDriver driver;
