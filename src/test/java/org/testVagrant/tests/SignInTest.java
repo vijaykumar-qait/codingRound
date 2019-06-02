@@ -5,8 +5,10 @@ import org.testVagrant.core.BaseDriver;
 import org.testVagrant.core.GenericFunctions;
 import org.testVagrant.pageobjects.SingIn.LandingPage;
 import org.testVagrant.pageobjects.SingIn.SignInFormPage;
+import org.testVagrant.utils.Log;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -36,17 +38,23 @@ public class SignInTest extends BaseDriver{
 	
 	@Test
 	public void TC_001_Verify_SignIn_Modal_Window() {
+		String currenTestName = Thread.currentThread().getStackTrace()[1].getMethodName();
+		Log.startTestCase(currenTestName);
     	landingPage.click_yourTrip_WE();
     	landingPage.click_singIn_Btn();
     	Assert.assertTrue(signInFormPage.isDisplayed_email_Input(), "Email input is not displayed");
     	Assert.assertTrue(signInFormPage.isDisplayed_password_Input(), "Password input is not displayed");
+    	Log.endTestCase(currenTestName);
 	}
 	
     @Test(dependsOnMethods="TC_001_Verify_SignIn_Modal_Window")
     public void TC_002_Verify__Error_Message_is_Thrown_If_SignIn_Details_Are_Missing() {
+    	String currenTestName = Thread.currentThread().getStackTrace()[1].getMethodName();
+    	Log.startTestCase(currenTestName);
     	signInFormPage.click_loginSingIn_Btn();
     	Assert.assertTrue(signInFormPage.getText_errorMessage_WE().contains("There were errors in your submission"), "Error message is not"
     			+ "thrown on sigining in with missing details");
+    	Log.endTestCase(currenTestName);
     }
 
     @AfterTest

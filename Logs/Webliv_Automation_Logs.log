@@ -1,7 +1,30 @@
-02-06-2019 11:24:31 INFO [Log]: Get: https://www.cleartrip.com/
-02-06-2019 11:24:39 INFO [Log]: Element is clicked
-02-06-2019 11:24:39 INFO [Log]: Element is clicked
-02-06-2019 11:24:40 INFO [Log]: Filled text Bangalore
-02-06-2019 11:24:43 INFO [Log]: Filled text Delhi
-02-06-2019 11:24:47 INFO [Log]: Element is clicked
-02-06-2019 11:24:51 INFO [Log]: Element is clicked
+02-06-2019 18:05:58 INFO [Log]: Get: https://www.cleartrip.com/
+02-06-2019 18:05:58 INFO [Log]: **** Started TC_001_Verify_Clear_Trip_Home_Page ****
+02-06-2019 18:05:58 INFO [Log]: **** Started TC_001_Verify_SignIn_Modal_Window ****
+02-06-2019 18:05:58 INFO [Log]: Element is clicked
+02-06-2019 18:06:04 INFO [Log]: Switched to frame
+02-06-2019 18:06:04 INFO [Log]: **** Ended TC_001_Verify_SignIn_Modal_Window ****
+02-06-2019 18:06:04 INFO [Log]: **** Started TC_001_Verify_That_User_Is_On_Hotel_Page ****
+02-06-2019 18:06:05 INFO [Log]: Element is clicked
+02-06-2019 18:06:05 INFO [Log]: **** Ended TC_001_Verify_Clear_Trip_Home_Page ****
+02-06-2019 18:06:05 INFO [Log]: **** Started TC_002_Verify__Error_Message_is_Thrown_If_SignIn_Details_Are_Missing ****
+02-06-2019 18:06:05 INFO [Log]: Element is clicked
+02-06-2019 18:06:06 INFO [Log]: **** Ended TC_002_Verify__Error_Message_is_Thrown_If_SignIn_Details_Are_Missing ****
+02-06-2019 18:06:06 INFO [Log]: **** Started TC_002_Verify_That_Results_Appear_For_A_OneWay_Journey ****
+02-06-2019 18:06:06 INFO [Log]: Element is clicked
+02-06-2019 18:06:06 INFO [Log]: Filled text Bangalore
+02-06-2019 18:06:10 INFO [Log]: Filled text Delhi
+02-06-2019 18:06:15 INFO [Log]: Element is clicked
+02-06-2019 18:06:18 INFO [Log]: Element is clicked
+02-06-2019 18:06:18 INFO [Log]: **** Ended TC_001_Verify_That_User_Is_On_Hotel_Page ****
+02-06-2019 18:06:18 INFO [Log]: **** Started TC_002_Verify_User_Should_Be_Able_To_Search_For_Hotels ****
+02-06-2019 18:06:19 INFO [Log]: Filled text Indiranagar, Bangalore
+02-06-2019 18:06:19 INFO [Log]: Element is clicked
+02-06-2019 18:06:19 INFO [Log]: **** Ended TC_002_Verify_That_Results_Appear_For_A_OneWay_Journey ****
+02-06-2019 18:06:25 INFO [Log]: Element is clicked
+02-06-2019 18:06:26 INFO [Log]: Selected drop down by text: 1 room, 2 adults
+02-06-2019 18:06:27 INFO [Log]: Element is clicked
+02-06-2019 18:06:27 INFO [Log]: **** Ended TC_002_Verify_User_Should_Be_Able_To_Search_For_Hotels ****
+02-06-2019 18:06:29 INFO [Log]: Browser closed
+02-06-2019 18:06:31 INFO [Log]: Browser closed
+02-06-2019 18:06:32 INFO [Log]: Browser closed

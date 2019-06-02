@@ -10,7 +10,7 @@ import java.util.Map;
 
 /*
  * This class will read the data from requirement.config where we have put our global variable.Class method is defined as static as we will 
- * be needing these global variable throughout our execution
+ * be needing the these filed in test class or any other class
  */
 
 public class ConfigFileReader {

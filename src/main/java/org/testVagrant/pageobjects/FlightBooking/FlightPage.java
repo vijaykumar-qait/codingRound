@@ -105,9 +105,9 @@ public class FlightPage {
 		for(WebElement element : dateListWE) {
 			if(element.getText().trim().equals(dateArr[0].trim())) {
 				element.click();
+				break;
 			}
 		}
-		
 	}
 	
 	public void click_searchBtn() {

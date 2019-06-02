@@ -33,6 +33,9 @@ public class LandingPage {
 	@FindBy(css="a[title*=\"Find flights\"]")
 	WebElement flight_Lnk;
 	
+	@FindBy(css="li[class=\"hotelApp \"]>a[href*=\"hotels\"]")
+	WebElement hotel_Lnk;
+
 	public String getText_searchFlight_WE() {
 		return generic.GetText(searchFlight_WE);
 	}
@@ -47,5 +50,9 @@ public class LandingPage {
 	
 	public void click_flight_Lnk() {
 		generic.Click(flight_Lnk);
+	}
+	
+	public void click_hotel_Lnk() {
+		generic.Click(hotel_Lnk);
 	}
 }
