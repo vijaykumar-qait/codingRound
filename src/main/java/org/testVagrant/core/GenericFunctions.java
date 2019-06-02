@@ -152,7 +152,7 @@ public class GenericFunctions extends BaseDriver{
 		Log.info("Mouse hover to element");
 	}
 	
-	public void Mouse_Hove(WebElement locator) {
+	public void Mouse_Hover(WebElement locator) {
 		Actions action = new Actions(driver);
 		action.moveToElement(locator);
 		action.build().perform();

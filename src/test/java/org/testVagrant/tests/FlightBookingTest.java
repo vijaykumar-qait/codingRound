@@ -1,90 +1,62 @@
 package org.testVagrant.tests;
-import com.sun.javafx.PlatformUtil;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
+import org.apache.log4j.xml.DOMConfigurator;
+import org.testVagrant.config.ConfigFileReader;
+import org.testVagrant.core.BaseDriver;
+import org.testVagrant.core.GenericFunctions;
+import org.testVagrant.pageobjects.FlightBooking.FlightPage;
+import org.testVagrant.pageobjects.FlightBooking.FlightSearchResultPage;
+import org.testVagrant.pageobjects.SingIn.LandingPage;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import java.util.List;
+public class FlightBookingTest extends BaseDriver{
+	
+	String URL;
+	String browserType;
+	int timeout;
+	String toLocation, fromLocation;
+	String departDate;
+	
+	GenericFunctions generic;
+	FlightPage flightPage;
+	FlightSearchResultPage flightSearchResultPage;
+	LandingPage landingPage;
+	
+	@BeforeTest
+	public void BeforeTest() {
+		URL = ConfigFileReader.getConfigValue("url");
+		browserType = ConfigFileReader.getConfigValue("browser");
+		toLocation = ConfigFileReader.getConfigValue("to");
+		fromLocation = ConfigFileReader.getConfigValue("from");
+		departDate = ConfigFileReader.getConfigValue("departDate");
+		generic = new GenericFunctions();
+		driver = generic.StartDriver(browserType);
+		driver.manage().window().maximize();
+		
+		landingPage = new LandingPage(driver, generic);
+		flightPage = new FlightPage(driver, generic);
+		flightSearchResultPage = new FlightSearchResultPage(driver, generic);
+		DOMConfigurator.configure("log4j.xml");
+		generic.get(URL);
+	}
 
-public class FlightBookingTest {
-
-    WebDriver driver = new ChromeDriver();
-
-
-    @Test
-    public void testThatResultsAppearForAOneWayJourney() {
-
-        setDriverPath();
-        driver.get("https://www.cleartrip.com/");
-        waitFor(2000);
-        driver.findElement(By.id("OneWay")).click();
-
-        driver.findElement(By.id("FromTag")).clear();
-        driver.findElement(By.id("FromTag")).sendKeys("Bangalore");
-
-        //wait for the auto complete options to appear for the origin
-
-        waitFor(2000);
-        List<WebElement> originOptions = driver.findElement(By.id("ui-id-1")).findElements(By.tagName("li"));
-        originOptions.get(0).click();
-
-        driver.findElement(By.id("toTag")).clear();
-        driver.findElement(By.id("toTag")).sendKeys("Delhi");
-
-        //wait for the auto complete options to appear for the destination
-
-        waitFor(2000);
-        //select the first item from the destination auto complete list
-        List<WebElement> destinationOptions = driver.findElement(By.id("ui-id-2")).findElements(By.tagName("li"));
-        destinationOptions.get(0).click();
-
-        driver.findElement(By.xpath("//*[@id='ui-datepicker-div']/div[1]/table/tbody/tr[3]/td[7]/a")).click();
-
-        //all fields filled in. Now click on search
-        driver.findElement(By.id("SearchBtn")).click();
-
-        waitFor(5000);
-        //verify that result appears for the provided journey search
-        Assert.assertTrue(isElementPresent(By.className("searchSummary")));
-
-        //close the browser
-        driver.quit();
-
-    }
-
-
-    private void waitFor(int durationInMilliSeconds) {
-        try {
-            Thread.sleep(durationInMilliSeconds);
-        } catch (InterruptedException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
-    }
-
-
-    private boolean isElementPresent(By by) {
-        try {
-            driver.findElement(by);
-            return true;
-        } catch (NoSuchElementException e) {
-            return false;
-        }
-    }
-
-    private void setDriverPath() {
-        if (PlatformUtil.isMac()) {
-            System.setProperty("webdriver.chrome.driver", "chromedriver");
-        }
-        if (PlatformUtil.isWindows()) {
-            System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-        }
-        if (PlatformUtil.isLinux()) {
-            System.setProperty("webdriver.chrome.driver", "chromedriver_linux");
-        }
-    }
+	@Test
+	public void TC_001_Verify_Clear_Trip_Home_Page() {
+		landingPage.click_flight_Lnk();
+		Assert.assertTrue(landingPage.getText_searchFlight_WE().contains("Search flights"));
+	}
+	
+	@Test(dependsOnMethods="TC_001_Verify_Clear_Trip_Home_Page")
+	public void TC_002_Verify_That_Results_Appear_For_A_OneWay_Journey() {
+		flightPage.click_oneWay_RdBtn();
+		flightPage.select_From_Location(fromLocation);
+		flightPage.select_To_Location(toLocation);
+		flightPage.select_Date_WE(departDate);
+		flightPage.click_searchBtn();
+		String actualSearchSummary = flightSearchResultPage.getString_searchSummary().trim();
+		Assert.assertTrue(actualSearchSummary.contains(toLocation) &&
+				actualSearchSummary.contains(fromLocation), 
+				"Location: " + toLocation + " or " + fromLocation + " is not displayed");
+	}
 }

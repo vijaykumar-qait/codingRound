@@ -30,6 +30,9 @@ public class LandingPage {
 	@FindBy(id="SignIn")
 	WebElement singIn_Btn;
 	
+	@FindBy(css="a[title*=\"Find flights\"]")
+	WebElement flight_Lnk;
+	
 	public String getText_searchFlight_WE() {
 		return generic.GetText(searchFlight_WE);
 	}
@@ -40,5 +43,9 @@ public class LandingPage {
 	
 	public void click_singIn_Btn() {
 		generic.MouseHoverAndClick(singIn_Btn);
+	}
+	
+	public void click_flight_Lnk() {
+		generic.Click(flight_Lnk);
 	}
 }
