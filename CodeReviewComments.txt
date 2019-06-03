@@ -1,0 +1,17 @@
+Code Review Comments:
+1. Earlier we have 3 test classes defined containing driver initialization(separately in each java class) and 
+different locator driving strategy. Also, hard wait(Thread.sleep()) is being used. Now we are following Page Object Design(POM) 
+design pattern, where for each web page we are defining a separate java class.
+
+2. Each page object java class will be containing a common locator strategy (Page Factory) for deriving web element on the page.
+
+3. We have created main and test packages where the main package contains config, core, page objects, util package.The test package 
+contains only our test script classes.
+4. We have created a single file requirement.config file where all the global variables are defined like URL, browsertype, etc which 
+we all be needing frequently. ConfigFileReader class contains a static method that will be reading this requirement.config 
+file fetching us the desired global value.
+5. In the core package, we have a common base driver class which is extended by test classes and generic class. 
+The generic class defines driver initialization login on the basics of browser being passed as a parameter and operating system 
+user is using along with other functions that needed for page object classes.
+6. Util package contains Log java file which we are using for logging purpose of our script.
+7. We have created a single file testng.xml for driving our tests script via a single file.
